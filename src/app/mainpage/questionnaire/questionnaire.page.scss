@@ -1,0 +1,19 @@
+ion-content{
+--background: none;
+background-image: url('../../../assets/BG.png');
+background-position: center top;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+#questionPage{
+    .questionCard{
+        background-color: white;
+        .cardTitle{
+            text-align: center;
+        }
+        .cardContent{
+            text-align: center;
+        }
+    }
+}

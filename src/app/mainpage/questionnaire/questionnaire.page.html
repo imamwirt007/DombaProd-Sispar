@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Health Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="questionPage">
+  <ion-card class="questionCard">
+    <ion-card-header>
+      <ion-card-title class="cardTitle">{{questionData.nama_gejala}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="cardContent">
+      <ion-list>
+        <ion-radio-group>
+          <ion-list-header>
+              {{questionData.pertanyaan | titlecase}}
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Ya</ion-label>
+            <ion-radio slot="start" value="Yes" color="success"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio slot="start" value="No" color="danger"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar>
+    <ion-tab-button (click)="prevQuestion()" *ngIf="questionData.kode_gejala !== 'G1'">
+      <ion-label>Sebelumnya</ion-label>
+      <ion-icon name="arrow-dropleft"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button (click)="nextQuestion()" *ngIf="questionData.kode_gejala !== 'G24'" >
+      <ion-label>Selanjutnya</ion-label>
+      <ion-icon name="arrow-dropright"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
