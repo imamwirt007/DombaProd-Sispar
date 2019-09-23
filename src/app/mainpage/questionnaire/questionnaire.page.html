@@ -39,5 +39,9 @@
       <ion-label>Selanjutnya</ion-label>
       <ion-icon name="arrow-dropright"></ion-icon>
     </ion-tab-button>
+    <ion-tab-button color="success" (click)="submit()" *ngIf="questionData.kode_gejala == 'G24'" >
+      <ion-label>Submit</ion-label>
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+    </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

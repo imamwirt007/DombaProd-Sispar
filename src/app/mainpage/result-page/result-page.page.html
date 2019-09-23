@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Hasil Check Anda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="resultContent">
+  <ion-card class="cardContent">
+    <ion-card-title>
+      Hasil Dari Tes Anda Adalah:
+    </ion-card-title>
+    <ion-card-subtitle>
+      Anda kemungkinan mengidap <b>Kondisi Jantung</b> ini!
+    </ion-card-subtitle>
+    <ion-card-content>
+      Fakta fakta tentang kondisi yang anda miliki
+    </ion-card-content>
+    <ion-button color="primary">Simpan Hasil</ion-button>
+    <ion-button [routerLink]="['../welcome']"color="success">Beranda</ion-button>
+  </ion-card>
+</ion-content>

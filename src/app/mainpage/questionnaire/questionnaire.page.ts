@@ -14,34 +14,32 @@ export class QuestionnairePage implements OnInit {
               private activatedRouter: ActivatedRoute,
               private route: Router,
     ) { }
-  prev: number;
-  next: number;
-  prevId: string;
-  nextId: string;
+  prev = 0;
+  next = 2;
+  prevData: Question;
+  nextData: Question;
   questionData: Question;
   pageId: string;
   ngOnInit() {
-    this.prev = 0;
-    this.next = 2;
     this.activatedRouter.paramMap.subscribe( param => {
         this.pageId = param.get('questionId');
         this.questionData = this.question.getQuestion(this.pageId);
-        this.prevId = 'G' + this.prev ;
-        this.nextId = 'G' + this.next ;
+        this.prevData = this.question.getQuestion('G' + this.prev);
+        this.nextData = this.question.getQuestion('G' + this.next);
       }
     )
   }
 
-  nextQuestion(){
-    this.prev = this.prev + 1;
-    this.next = this.next + 1;
-    this.route.navigate(['./questionnaire/G' + this.next])
+  nextQuestion() {
+    this.route.navigate(['./questionnaire/' + this.nextData.kode_gejala]);
   }
 
-  prevQuestion(){
-    this.prev = this.prev - 1;
-    this.next = this.next - 1;
-    this.route.navigate(['./questionnaire/G' + this.prev])
+  prevQuestion() {
+    this.route.navigate(['./questionnaire/' + this.prevData.kode_gejala]);
+  }
+
+  submit(){
+    this.route.navigate(['./result-page']);
   }
 
 }
